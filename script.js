@@ -11,7 +11,7 @@ const DEMO_VIDEOS = {
   live: "aGdZ0gvr42k",          // Video Demo Live Stream
   thumb: "idrAFB2X1po",         // Video Demo Auto Rotator Thumbnail
   upload: "YOUTUBE_ID_UPLOAD",   // Video Demo Auto Upload
-  bot: "YOUTUBE_ID_BOT"          // Video Demo Live Bot
+  bot: "B4PjNugt274"          // Video Demo Live Bot
 };
 
 window.playDemoVideo = function (type, element) {
