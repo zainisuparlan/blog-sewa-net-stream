@@ -1,0 +1,1558 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NetStream — Sewa Aplikasi Live Stream & Creator Tools untuk YouTube</title>
+  <meta name="description"
+    content="Sewa aplikasi live stream, auto thumbnail, auto upload, dan auto live bot premium untuk YouTube creator. Paket ekonomis mulai 30rb/bulan. Kelola channel YouTube kamu jadi lebih profesional!" />
+  <meta name="keywords"
+    content="sewa live stream, aplikasi youtube, auto thumbnail, auto upload youtube, live streaming bot, creator tools youtube indonesia" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Fallback jika gambar belum tersedia */
+    .hero-dashboard-img img:not([src]),
+    .hero-dashboard-img img[src=""],
+    .demo-img-wrap img:not([src]),
+    .demo-img-wrap img[src=""] {
+      display: none;
+    }
+
+    .demo-img-wrap {
+      min-height: 280px;
+    }
+
+    .img-placeholder {
+      width: 100%;
+      min-height: 280px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 12px;
+      font-size: 3rem;
+      color: var(--text-muted);
+      background: var(--bg-card);
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ===== FLOATING PARTICLES ===== -->
+  <div class="particles" id="particles"></div>
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo">
+        <span class="logo-icon">📡</span>
+        <span class="logo-text">Net<span class="logo-accent">Stream</span></span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#tentang">Fitur</a></li>
+        <li><a href="#harga">Paket</a></li>
+        <li><a href="#harga"
+            onclick="showPricing('live'); setTimeout(() => { document.getElementById('pricing-live').scrollIntoView({behavior: 'smooth', block: 'center'}); }, 100);">Order
+            Murah / IP Shared</a></li>
+        <li><a href="#harga"
+            onclick="showPricing('live'); setTimeout(() => { document.getElementById('pricing-live').scrollIntoView({behavior: 'smooth', block: 'center'}); }, 100);">Order
+            Premium / Dedicated IP</a></li>
+        <li><a href="#kontak">Kontak</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <!-- ===== HERO SECTION ===== -->
+  <section class="hero" id="home">
+    <div class="hero-bg-glow glow-1"></div>
+    <div class="hero-bg-glow glow-2"></div>
+    <div class="hero-bg-glow glow-3"></div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="live-dot"></span> Platform #1 Creator Tool Indonesia
+      </div>
+      <h1 class="hero-title">
+        Kelola YouTube-mu Seperti <br>
+        <span class="gradient-text">Profesional Sejati</span>
+      </h1>
+      <p class="hero-subtitle">
+        Sewa aplikasi live stream, auto thumbnail, auto upload & live bot premium.<br>
+        Bangun channel YouTube impianmu — otomatis, aman, dan konsisten.
+      </p>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-num">500+</span>
+          <span class="stat-label">Creator Aktif</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num">24/7</span>
+          <span class="stat-label">Support Online</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num">99.9%</span>
+          <span class="stat-label">Uptime Server</span>
+        </div>
+      </div>
+      <div class="hero-actions">
+        <a href="#harga" class="btn-primary" id="btn-lihat-harga">
+          <span>🚀</span> Lihat Paket Harga
+        </a>
+        <a href="#demo" class="btn-secondary" id="btn-lihat-demo">
+          <span>▶</span> Lihat Demo
+        </a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card-wrapper">
+        <div class="hero-dashboard-img">
+          <img src="assets/hero_dashboard.png" alt="NetStream Dashboard Live Streaming"
+            onerror="this.style.display='none';this.parentElement.innerHTML+='<div class=img-placeholder>📡<span style=font-size:1rem;color:var(--text-secondary)>Live Streaming Dashboard</span></div>'" />
+          <div class="img-glow"></div>
+        </div>
+        <div class="floating-badge badge-live">
+          <span class="live-dot"></span> LIVE NOW
+        </div>
+        <div class="floating-badge badge-views">
+          👁 12.4K viewers
+        </div>
+        <div class="floating-badge badge-upload">
+          ✅ Auto Upload
+        </div>
+      </div>
+    </div>
+    <a href="#tentang" class="scroll-down" aria-label="Scroll down">
+      <span></span>
+    </a>
+  </section>
+  <!-- ===== MARQUEE SCROLL ===== -->
+  <div class="marquee-wrapper">
+    <div class="marquee-track">
+      <span>🎥 Live Streaming Otomatis</span>
+      <span>🖼️ Auto Thumbnail Rotator</span>
+      <span>📤 Auto Upload Video</span>
+      <span>🤖 Live Bot Scheduler</span>
+      <span>🔒 Aman & Terpercaya</span>
+      <span>📊 Multi Channel Support</span>
+      <span>⚡ Server Cepat & Stabil</span>
+      <span>🎥 Live Streaming Otomatis</span>
+      <span>🖼️ Auto Thumbnail Rotator</span>
+      <span>📤 Auto Upload Video</span>
+      <span>🤖 Live Bot Scheduler</span>
+      <span>🔒 Aman & Terpercaya</span>
+      <span>📊 Multi Channel Support</span>
+      <span>⚡ Server Cepat & Stabil</span>
+    </div>
+  </div>
+  <!-- ===== TENTANG SECTION ===== -->
+  <section class="section" id="tentang">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">Tentang NetStream</div>
+        <h2 class="section-title">Kenapa Creator YouTube Butuh <span class="gradient-text">Ini?</span></h2>
+        <p class="section-desc">Live streaming adalah salah satu cara paling efektif untuk berkembang di YouTube. Tapi
+          mengelolanya secara manual itu melelahkan. NetStream hadir sebagai solusi cerdas untuk kamu.</p>
+      </div>
+      <div class="why-grid">
+        <div class="why-card" data-delay="0">
+          <div class="why-icon">📈</div>
+          <h3>Mengapa Harus Live?</h3>
+          <p>YouTube memprioritaskan konten live di rekomendasi. Live streaming meningkatkan watch time, subscriber, dan
+            interaksi komunitas secara signifikan lebih cepat dari video biasa.</p>
+        </div>
+        <div class="why-card" data-delay="100">
+          <div class="why-icon">🛡️</div>
+          <h3>Live Aman & Terproteksi</h3>
+          <p>Dengan sistem kami, streaming berjalan di server dedicated. Tidak bergantung pada perangkatmu. Koneksi
+            putus? Stream tetap jalan. Channel aman dari strike karena kelola dengan benar.</p>
+        </div>
+        <div class="why-card" data-delay="200">
+          <div class="why-icon">🤖</div>
+          <h3>Otomatisasi = Konsistensi</h3>
+          <p>Algoritma YouTube menyukai konten yang konsisten. Auto upload & live bot memastikan channel kamu aktif
+            setiap hari — bahkan saat kamu tidur, liburan, atau bekerja.</p>
+        </div>
+        <div class="why-card" data-delay="300">
+          <div class="why-icon">🎨</div>
+          <h3>Thumbnail = CTR Tinggi</h3>
+          <p>Thumbnail yang berubah-ubah secara otomatis bisa meningkatkan Click-Through Rate (CTR). A/B testing
+            thumbnail tanpa kerja keras manual, sistem yang bekerja untukmu.</p>
+        </div>
+        <div class="why-card" data-delay="0">
+          <div class="why-icon">💰</div>
+          <h3>Hemat Waktu & Biaya</h3>
+          <p>Bayangkan punya editor, scheduler, dan teknisi streaming sekaligus — dengan biaya mulai 30.000/bulan.
+            Investasi terkecil, dampak terbesar untuk channel kamu.</p>
+        </div>
+        <div class="why-card" data-delay="100">
+          <div class="why-icon">🌐</div>
+          <h3>Multi Channel Support</h3>
+          <p>Satu aplikasi untuk mengelola banyak channel sekaligus. Cocok untuk agensi, tim konten, atau creator yang
+            punya lebih dari satu channel YouTube.</p>
+        </div>
+      </div>
+      <!-- Quote Section -->
+      <div class="quote-block">
+        <div class="quote-symbol">"</div>
+        <blockquote>Konsistensi adalah kunci algoritma YouTube. Mereka yang hadir setiap hari, adalah mereka yang menang
+          di jangka panjang.</blockquote>
+        <cite>— Filosofi Creator Sukses</cite>
+      </div>
+    </div>
+  </section>
+  <!-- ===== AUTO THUMBNAIL MARKETING SECTION ===== -->
+  <section class="section" id="rotator-promo"
+    style="background: var(--bg-section-dark); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag"
+          style="background: rgba(245, 158, 11, 0.15); border: 1px solid rgba(245, 158, 11, 0.3); color: var(--accent-warm);">
+          🖼️ OPTIMASI CTR YOUTUBE</div>
+        <h2 class="section-title">Suka Bangun Channel Live Seperti Ini?</h2>
+        <p class="section-desc" style="color: #fca5a5; font-weight: 500;">Ganti thumbnail 4x sehari, setiap hari… secara
+          MANUAL? Jari bisa keriting! 😩</p>
+      </div>
+      <!-- Problem Grid -->
+      <div class="promo-grid">
+        <!-- Card Kiri: Capek Ganti Manual -->
+        <div class="promo-card problem-card">
+          <div class="promo-card-badge badge-red">😫 Capek Ganti Manual?</div>
+          <img src="assets/safar_streams.png" alt="Grid Video YouTube Live Harus Ganti Thumbnail Manual"
+            style="width: 100%; border-radius: 12px; border: 1px solid var(--border-subtle); display: block;" />
+        </div>
+        <!-- Card Kanan: Channel View Tri Zakhrofa Entertainment -->
+        <div class="promo-card channel-card">
+          <div class="promo-card-badge badge-blue">📺 Tri Zakhrofa Entertainment</div>
+          <img src="assets/channel_streams.png" alt="Tampilan Channel Tri Zakhrofa Live Streams"
+            style="width: 100%; border-radius: 12px; border: 1px solid var(--border-subtle); display: block;" />
+        </div>
+      </div>
+      <!-- Divider Connector -->
+      <div class="promo-divider-connector">
+        <span class="pulse-arrow">⬇️</span> Solusinya Ada! <span class="pulse-arrow">⬇️</span>
+      </div>
+      <!-- Solution Mockup Box -->
+      <div class="promo-solution-box">
+        <div class="promo-solution-header">
+          <span class="solution-badge">✅ Auto Thumbnail Rotator</span>
+          <h3>Atur Jadwal Sekali, Thumbnail Berubah Otomatis 24/7! 🚀</h3>
+          <p>Dashboard Auto Rotator menampilkan jadwal rotasi thumbnail otomatis harian secara berkala tanpa intervensi
+            manual.</p>
+        </div>
+
+        <div class="promo-solution-image-container">
+          <img src="assets/rotator_scheduler.png" alt="Dashboard Antrean Tugas Rotasi Thumbnail"
+            style="width: 100%; display: block;" />
+          <div class="image-overlay-glow"></div>
+        </div>
+        <div class="promo-solution-footer">
+          <p class="cta-subtext" style="margin-bottom: 8px;">Dapatkan aplikasinya segera — hemat waktu, tingkatkan CTR
+            channel-mu!</p>
+          <a href="#harga"
+            onclick="showPricing('thumb'); setTimeout(() => { document.getElementById('pricing-thumb').scrollIntoView({behavior: 'smooth', block: 'center'}); }, 100);"
+            class="btn-primary" style="background: var(--grad-warm); box-shadow: 0 4px 24px rgba(245, 158, 11, 0.4);">
+            <span>🚀</span> Lihat Harga &amp; Order Auto Thumbnail
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ===== LAYANAN SECTION ===== -->
+  <section class="section section-dark" id="layanan">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">Ekosistem Lengkap</div>
+        <h2 class="section-title">Semua Alat yang Kamu <span class="gradient-text">Butuhkan</span></h2>
+        <p class="section-desc">Dari live streaming hingga manajemen konten — kami sediakan semua dalam satu ekosistem
+          terintegrasi.</p>
+      </div>
+      <div class="services-grid">
+        <!-- Live Streaming -->
+        <div class="service-card featured" id="service-live">
+          <div class="service-card-glow"></div>
+          <div class="service-header">
+            <div class="service-icon-wrap live-gradient">
+              <span>📡</span>
+            </div>
+            <div class="service-badges">
+              <span class="badge badge-popular">⭐ Populer</span>
+            </div>
+          </div>
+          <h3 class="service-name">Aplikasi Live Stream</h3>
+          <p class="service-desc">Stream YouTube 24 jam dari server kami tanpa PC menyala. Otomatis putar video, aman
+            dari putus koneksi, cocok untuk semua genre konten.</p>
+          <ul class="service-features">
+            <li>✅ Stream dari server cloud (tanpa PC)</li>
+            <li>✅ Auto putar video berulang</li>
+            <li>✅ Custom stream key & title</li>
+            <li>✅ Support 480p, 720p, 1080p</li>
+            <li>✅ Dashboard monitoring real-time</li>
+            <li>✅ Log aktivitas lengkap</li>
+          </ul>
+          <div class="service-price-hint">Mulai dari <strong>Rp 30.000/bln</strong></div>
+          <a href="#harga" class="service-btn" id="btn-live-harga">Pilih Paket →</a>
+        </div>
+        <!-- Auto Thumbnail -->
+        <div class="service-card" id="service-thumbnail">
+          <div class="service-card-glow thumb-glow"></div>
+          <div class="service-header">
+            <div class="service-icon-wrap thumb-gradient">
+              <span>🖼️</span>
+            </div>
+            <div class="service-badges">
+              <span class="badge badge-new">✨ Boost CTR</span>
+            </div>
+          </div>
+          <h3 class="service-name">Auto Thumbnail Rotator</h3>
+          <p class="service-desc">Ubah thumbnail video YouTube secara otomatis sesuai jadwal. Tingkatkan CTR dengan A/B
+            testing thumbnail tanpa sentuh manual.</p>
+          <ul class="service-features">
+            <li>✅ Rotasi thumbnail otomatis</li>
+            <li>✅ Jadwal kustom per video</li>
+            <li>✅ Upload multi thumbnail</li>
+            <li>✅ Support multi akun YouTube</li>
+            <li>✅ Riwayat rotasi lengkap</li>
+            <li>✅ Google OAuth aman</li>
+          </ul>
+          <div class="service-price-hint">Mulai dari <strong>Rp 60.000/bln</strong></div>
+          <a href="#harga" class="service-btn thumb-btn" id="btn-thumb-harga">Pilih Paket →</a>
+        </div>
+        <!-- Auto Upload -->
+        <div class="service-card" id="service-upload">
+          <div class="service-card-glow upload-glow"></div>
+          <div class="service-header">
+            <div class="service-icon-wrap upload-gradient">
+              <span>📤</span>
+            </div>
+            <div class="service-badges">
+              <span class="badge badge-hot">🔥 Terlaris</span>
+            </div>
+          </div>
+          <h3 class="service-name">Auto Upload Video</h3>
+          <p class="service-desc">Jadwalkan upload video YouTube secara otomatis. Tentukan waktu tayang, judul,
+            deskripsi, dan thumbnail — semua tanpa intervensi manual.</p>
+          <ul class="service-features">
+            <li>✅ Upload terjadwal otomatis</li>
+            <li>✅ Set judul & deskripsi custom</li>
+            <li>✅ Atur privasi video</li>
+            <li>✅ Queue video tak terbatas</li>
+            <li>✅ Notifikasi status upload</li>
+            <li>✅ Support berbagai format video</li>
+          </ul>
+          <div class="service-price-hint"><strong>Rp 100.000/bln</strong></div>
+          <a href="#harga" class="service-btn upload-btn" id="btn-upload-harga">Pilih Paket →</a>
+        </div>
+        <!-- Auto Live Bot -->
+        <div class="service-card" id="service-bot">
+          <div class="service-card-glow bot-glow"></div>
+          <div class="service-header">
+            <div class="service-icon-wrap bot-gradient">
+              <span>🤖</span>
+            </div>
+            <div class="service-badges">
+              <span class="badge badge-pro">💎 Pro</span>
+            </div>
+          </div>
+          <h3 class="service-name">Auto Live Bot</h3>
+          <p class="service-desc">Bot cerdas yang mengelola jadwal live otomatis di channel YouTube-mu. Set sekali,
+            jalan terus — setiap hari, setiap jam, tanpa kamu awasi.</p>
+          <ul class="service-features">
+            <li>✅ Jadwal live otomatis 24/7</li>
+            <li>✅ Queue video playlist</li>
+            <li>✅ Auto start & stop stream</li>
+            <li>✅ Deteksi & restart otomatis</li>
+            <li>✅ Dashboard manajemen</li>
+            <li>✅ Alert notifikasi error</li>
+          </ul>
+          <div class="service-price-hint"><strong>Rp 250.000/bln</strong></div>
+          <a href="#harga" class="service-btn bot-btn" id="btn-bot-harga">Pilih Paket →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ===== HARGA SECTION ===== -->
+  <section class="section" id="harga">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">Investasi Terjangkau</div>
+        <h2 class="section-title">Pilih Paket yang <span class="gradient-text">Tepat Untukmu</span></h2>
+        <p class="section-desc">Harga transparan tanpa biaya tersembunyi. Mulai kecil, scale up sesuai kebutuhan
+          channelmu.</p>
+      </div>
+      <!-- Tab Switcher -->
+      <div class="pricing-tabs" role="tablist">
+        <button class="price-tab active" id="tab-live" role="tab" onclick="showPricing('live')">📡 Live Stream</button>
+        <button class="price-tab" id="tab-thumb" role="tab" onclick="showPricing('thumb')">🖼️ Auto Thumbnail</button>
+        <button class="price-tab" id="tab-upload" role="tab" onclick="showPricing('upload')">📤 Auto Upload</button>
+        <button class="price-tab" id="tab-bot" role="tab" onclick="showPricing('bot')">🤖 Auto Live Bot</button>
+      </div>
+      <!-- Live Stream Pricing -->
+      <div id="pricing-live">
+        <div class="pricing-grid">
+          <!-- Paket A (Ekonomis) -->
+          <div class="price-card">
+            <div class="price-label">SHARE · EKONOMIS A</div>
+            <div class="price-amount">
+              <span class="currency">Rp</span>
+              <span class="amount">30.000</span>
+              <span class="period">/bln</span>
+            </div>
+            <div class="price-highlight">3 Tugas Live</div>
+            <ul class="price-features">
+              <li>💻 3 Tugas Live</li>
+              <li>💾 3GB Penyimpanan</li>
+              <li>🔄 Auto Looping</li>
+              <li>🕒 Bisa Perpanjang</li>
+              <li>⬆️ Bisa Upgrade</li>
+              <li>📅 Jadwal Mulai</li>
+              <li>⏹️ Jadwal Stop</li>
+              <li>🔁 Reschedule</li>
+            </ul>
+            <a href="javascript:void(0)" onclick="openOrderModal('Live Ekonomis - 3 Live/bln (30rb)')" class="price-btn"
+              id="btn-price-eko30">Order Paket Murah (Shared IP)</a>
+          </div>
+          <!-- Paket B (Ekonomis) -->
+          <div class="price-card featured-price">
+            <div class="price-badge">⭐ TERPOPULER</div>
+            <div class="price-label">SHARE · EKONOMIS B</div>
+            <div class="price-amount">
+              <span class="currency">Rp</span>
+              <span class="amount">45.000</span>
+              <span class="period">/bln</span>
+            </div>
+            <div class="price-highlight">5 Tugas Live</div>
+            <ul class="price-features">
+              <li>💻 5 Tugas Live</li>
+              <li>💾 5GB Penyimpanan</li>
+              <li>🔄 Auto Looping</li>
+              <li>🕒 Bisa Perpanjang</li>
+              <li>⬆️ Bisa Upgrade</li>
+              <li>📅 Jadwal Mulai</li>
+              <li>⏹️ Jadwal Stop</li>
+              <li>🔁 Reschedule</li>
+            </ul>
+            <a href="javascript:void(0)" onclick="openOrderModal('Live Ekonomis - 5 Live/bln (45rb)')"
+              class="price-btn price-btn-primary" id="btn-price-eko45">Order Paket Murah (Shared IP)</a>
+          </div>
+          <!-- Paket C (Ekonomis) -->
+          <div class="price-card">
+            <div class="price-label">SHARE · EKONOMIS C</div>
+            <div class="price-amount">
+              <span class="currency">Rp</span>
+              <span class="amount">95.000</span>
+              <span class="period">/bln</span>
+            </div>
+            <div class="price-highlight">10 Tugas Live</div>
+            <ul class="price-features">
+              <li>💻 10 Tugas Live</li>
+              <li>💾 10GB Penyimpanan</li>
+              <li>🔄 Auto Looping</li>
+              <li>🕒 Bisa Perpanjang</li>
+              <li>⬆️ Bisa Upgrade</li>
+              <li>📅 Jadwal Mulai</li>
+              <li>⏹️ Jadwal Stop</li>
+              <li>🔁 Reschedule</li>
+            </ul>
+            <a href="javascript:void(0)" onclick="openOrderModal('Live Ekonomis - 10 Live/bln (95rb)')"
+              class="price-btn" id="btn-price-eko95">Order Paket Murah (Shared IP)</a>
+          </div>
+          <!-- Paket Premium A (Pro A) -->
+          <div class="price-card featured-price">
+            <div class="price-badge" style="background: var(--grad-hero);">★ PAKET PREMIUM A</div>
+            <div class="price-label">DEDICATED · PRO A</div>
+            <div class="price-amount" style="margin-top: 10px;">
+              <span class="currency">Rp</span>
+              <span class="amount">250.000</span>
+              <span class="period">/bln</span>
+            </div>
+            <div class="price-highlight">Premium Live Streaming A</div>
+            <ul class="price-features">
+              <li>✔️ 30 Live Resolusi 720p, fps 30, bitrate 2500</li>
+              <li>✔️ 20 Live Resolusi 1080p, fps 30, bitrate 6500</li>
+              <li>✔️ 8 Live Resolusi 4K, fps 30, bitrate 12000</li>
+              <li>✔️ Penyimpanan 40GB</li>
+              <li style="color: var(--accent); font-weight: 700;">✔️ BONUS: Akses Auto Thumbnail (Free)</li>
+            </ul>
+            <a href="javascript:void(0)" onclick="openOrderModal('Live Dedicated Pro A (250rb)')"
+              class="price-btn price-btn-primary" id="btn-price-proA">Order Premium (Dedicated IP)</a>
+          </div>
+          <!-- Paket Premium B (Pro B) -->
+          <div class="price-card">
+            <div class="price-badge" style="background: var(--grad-warm);">👑 PAKET PREMIUM B</div>
+            <div class="price-label">DEDICATED · PRO B</div>
+            <div class="price-amount" style="margin-top: 10px;">
+              <span class="currency">Rp</span>
+              <span class="amount">350.000</span>
+              <span class="period">/bln</span>
+            </div>
+            <div class="price-highlight">Premium Live Streaming B (Populer)</div>
+            <ul class="price-features">
+              <li>✔️ 60 Live Resolusi 720p, fps 30, bitrate 2500</li>
+              <li>✔️ 40 Live Resolusi 1080p, fps 30, bitrate 6500</li>
+              <li>✔️ 16 Live Resolusi 4K, fps 30, bitrate 12000</li>
+              <li>✔️ Penyimpanan 80GB</li>
+              <li style="color: var(--accent-warm); font-weight: 700;">✔️ BONUS: Full Akses Auto Thumbnail &amp; Auto
+                Live (Free)</li>
+            </ul>
+            <a href="javascript:void(0)" onclick="openOrderModal('Live Dedicated Pro Plus B (350rb)')" class="price-btn"
+              id="btn-price-proB">Order Premium (Dedicated IP)</a>
+          </div>
+        </div>
+        <!-- Live Stream Notes (Screenshot Style) -->
+        <div
+          style="width: 100%; display: flex; flex-direction: column; gap: 12px; margin-top: 24px; max-width: 1200px; margin-left: auto; margin-right: auto; text-align: left;">
+          <div class="info-box info-box-yellow" style="padding: 16px 24px; margin-bottom: 0;">
+            <div class="info-box-content" style="font-size: 0.88rem;">
+              📌 <strong>Catatan Penting:</strong> Pastikan File Format Mp4 Dengan codec H264 dan Pakai Encoder CBR,
+              Simak Tutorial Sebelum Order
+            </div>
+          </div>
+          <div class="info-box info-box-blue" style="padding: 16px 24px; margin-bottom: 0;">
+            <div class="info-box-content" style="font-size: 0.88rem;">
+              💰 <strong>Informasi Harga:</strong> Harga Perpanjangan Sama Setiap Bulannya, Dengan IP yang Sama
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Thumbnail Pricing -->
+      <div class="pricing-grid hidden" id="pricing-thumb"
+        style="grid-template-columns: 1fr 1fr; max-width: 780px; margin-left: auto; margin-right: auto;">
+        <!-- Starter -->
+        <div class="price-card">
+          <div class="price-label">SINGLE CREATOR</div>
+          <div class="price-amount">
+            <span class="currency">Rp</span>
+            <span class="amount">70.000</span>
+            <span class="period">/bln</span>
+          </div>
+          <div class="price-highlight">Paket Creator Personal</div>
+          <ul class="price-features">
+            <li>✅ Akses penuh aplikasi</li>
+            <li>✅ Auto rotasi thumbnail</li>
+            <li>✅ Jadwal kustom per video</li>
+            <li>✅ Upload multi thumbnail</li>
+            <li>✅ Riwayat rotasi lengkap</li>
+            <li>✅ Google OAuth aman</li>
+            <li>✅ Multi channel YouTube</li>
+          </ul>
+          <a href="javascript:void(0)" onclick="openOrderModal('Auto Thumbnail Single Creator (70rb)')"
+            class="price-btn" id="btn-price-thumb70">Order Auto Thumbnail</a>
+        </div>
+        <!-- Professional -->
+        <div class="price-card featured-price">
+          <div class="price-badge">💡 RECOMMENDED</div>
+          <div class="price-label">MULTI CREATOR</div>
+          <div class="price-amount">
+            <span class="currency">Rp</span>
+            <span class="amount">100.000</span>
+            <span class="period">/bln</span>
+          </div>
+          <div class="price-highlight">Paket Creator Pro</div>
+          <ul class="price-features">
+            <li>✅ Akses penuh aplikasi</li>
+            <li>✅ Auto rotasi thumbnail</li>
+            <li>✅ Jadwal kustom per video</li>
+            <li>✅ Upload multi thumbnail</li>
+            <li>✅ Riwayat rotasi lengkap</li>
+            <li>✅ Google OAuth aman</li>
+            <li>✅ Multi channel YouTube</li>
+            <li>✅ Priority support 24/7</li>
+          </ul>
+          <a href="javascript:void(0)" onclick="openOrderModal('Auto Thumbnail Multi Creator (100rb)')"
+            class="price-btn price-btn-primary" id="btn-price-thumb100">Order Auto Thumbnail</a>
+        </div>
+      </div>
+      <!-- Syarat & Kompresi - Full Width Below -->
+      <div class="hidden" id="pricing-thumb-info"
+        style="margin-top: 24px; border: 1px solid rgba(245, 158, 11, 0.3); border-radius: var(--radius-lg); background: linear-gradient(135deg, rgba(245, 158, 11, 0.05), var(--bg-card)); padding: 28px 32px; position: relative;">
+        <div
+          style="position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: var(--grad-warm); color: white; font-size: 0.78rem; font-weight: 800; padding: 5px 16px; border-radius: 99px; white-space: nowrap; letter-spacing: 0.5px;">
+          📋 SYARAT &amp; TIPS GAMBAR THUMBNAIL</div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 8px;">
+          <!-- Kiri: Ketentuan -->
+          <div>
+            <div
+              style="font-family: 'Space Grotesk', sans-serif; font-size: 1rem; font-weight: 700; color: var(--accent-warm); margin-bottom: 14px;">
+              📋 Ketentuan YouTube:</div>
+            <ul
+              style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; font-size: 0.87rem; color: var(--text-secondary);">
+              <li>📁 <strong>Maks. File Size:</strong> Batas resmi YouTube adalah <strong
+                  style="color: var(--text-primary);">2MB</strong> (sistem kami mendukung hingga 200MB).</li>
+              <li>🎯 <strong>Ukuran Optimal:</strong> Sekitar <strong style="color: var(--text-primary);">500KB</strong>
+                untuk rotasi cepat tanpa delay.</li>
+              <li>📐 <strong>Resolusi Terbaik:</strong> <strong style="color: var(--text-primary);">1280×720 px</strong>
+                (16:9) — standar YouTube.</li>
+              <li>🖼️ <strong>Format:</strong> JPG, PNG, atau GIF (tanpa animasi). JPG paling hemat ukuran.</li>
+            </ul>
+          </div>
+          <!-- Kanan: Tips Kompresi -->
+          <div
+            style="background: rgba(245, 158, 11, 0.08); border: 1px solid rgba(245, 158, 11, 0.2); border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 12px;">
+            <div
+              style="font-family: 'Space Grotesk', sans-serif; font-size: 1rem; font-weight: 700; color: var(--accent-warm);">
+              💡 Tips Kompresi Gratis</div>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 0; line-height: 1.6;">
+              Untuk kalian yg ingin kompres gambar lebih sempurna langsung klik tautan ini gratiss : <a
+                href="https://optimizer.netstream.my.id" target="_blank"
+                style="color: var(--accent-warm); font-weight: 700; text-decoration: underline;">optimizer.netstream.my.id</a>.
+              kalian juga bisa kunjungi <a href="https://netstream.my.id" target="_blank"
+                style="color: var(--accent-warm); font-weight: 700; text-decoration: underline;">netstream.my.id</a>
+              untuk melihat semua layanan kami. terima kasih..
+            </p>
+            <a href="https://optimizer.netstream.my.id" target="_blank" rel="noopener"
+              style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: var(--grad-warm); color: white; font-weight: 700; font-size: 0.9rem; padding: 12px 24px; border-radius: 99px; text-decoration: none; box-shadow: 0 4px 16px rgba(245, 158, 11, 0.4); transition: all 0.2s;"
+              onmouseover="this.style.transform='scale(1.04)';this.style.boxShadow='0 6px 24px rgba(245,158,11,0.55)'"
+              onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 4px 16px rgba(245,158,11,0.4)'">
+              🗜️ Buka Thumbnail Optimizer →
+            </a>
+            <div style="font-size: 0.72rem; color: var(--text-muted); text-align: center;">optimizer.netstream.my.id
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Upload Pricing -->
+      <div class="pricing-grid hidden" id="pricing-upload">
+        <div class="price-card featured-price" style="max-width:400px;margin:0 auto;">
+          <div class="price-badge">📤 ALL INCLUSIVE</div>
+          <div class="price-label">AUTO UPLOAD</div>
+          <div class="price-amount">
+            <span class="currency">Rp</span>
+            <span class="amount">100.000</span>
+            <span class="period">/bln</span>
+          </div>
+          <div class="price-highlight">Unlimited Upload Queue</div>
+          <ul class="price-features">
+            <li>✅ Jadwal upload otomatis</li>
+            <li>✅ Queue video tak terbatas</li>
+            <li>✅ Custom judul, deskripsi, tag</li>
+            <li>✅ Atur privasi video</li>
+            <li>✅ Thumbnail auto-attach</li>
+            <li>✅ Notifikasi status upload</li>
+            <li>✅ Support semua format video</li>
+            <li>✅ Google OAuth aman</li>
+          </ul>
+          <a href="javascript:void(0)" onclick="openOrderModal('Auto Upload Video (100rb)')"
+            class="price-btn price-btn-primary" id="btn-price-upload">Order Auto Upload</a>
+        </div>
+      </div>
+
+      <!-- Bot Pricing -->
+      <div class="pricing-grid hidden" id="pricing-bot">
+        <div class="price-card featured-price" style="max-width:420px;margin:0 auto;">
+          <div class="price-badge">🤖 FULLY AUTOMATED</div>
+          <div class="price-label">AUTO LIVE BOT</div>
+          <div class="price-amount">
+            <span class="currency">Rp</span>
+            <span class="amount">250.000</span>
+            <span class="period">/bln</span>
+          </div>
+          <div class="price-highlight">Live Otomatis 24/7</div>
+          <ul class="price-features">
+            <li>✅ Jadwal live otomatis 24/7</li>
+            <li>✅ Video playlist queue</li>
+            <li>✅ Auto start & stop stream</li>
+            <li>✅ Auto restart jika error</li>
+            <li>✅ Dashboard manajemen penuh</li>
+            <li>✅ Alert & notifikasi error</li>
+            <li>✅ Custom judul per live</li>
+            <li>✅ Server dedicated khusus</li>
+          </ul>
+          <a href="javascript:void(0)" onclick="openOrderModal('Auto Live Bot (250rb)')"
+            class="price-btn price-btn-primary" id="btn-price-bot">Order Auto Live Bot</a>
+        </div>
+      </div>
+
+      <!-- Bundle Promo -->
+      <div class="bundle-promo">
+        <div class="bundle-icon">🎁</div>
+        <div class="bundle-content">
+          <h3>Bundle Hemat — Ambil Semuanya!</h3>
+          <p>Kombinasikan Live Stream + Auto Thumbnail + Auto Upload dan dapatkan diskon spesial. Hubungi kami untuk
+            penawaran bundle eksklusif.</p>
+        </div>
+        <a href="javascript:void(0)" onclick="openOrderModal()" class="bundle-btn" id="btn-bundle-promo">Tanya Harga
+          Bundle</a>
+      </div>
+    </div>
+  </section>
+  <!-- ===== INFORMASI PENTING & TIPS LIVE ===== -->
+  <section class="section section-dark" id="tips-live">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">Edukasi &amp; Arahan</div>
+        <h2 class="section-title">Informasi Penting &amp; <span class="gradient-text">Tips Creator</span></h2>
+        <p class="section-desc">Panduan komprehensif bagi creator YouTube untuk mengoptimalkan live streaming, resolusi
+          video, waktu tayang, dan alur pemesanan.</p>
+      </div>
+      <div class="info-box-container">
+
+        <!-- Box 1: Apakah Live Streaming Bisa Tambah Jam Tayang & Cara Kerja -->
+        <div class="info-box info-box-yellow">
+          <h3 class="info-box-title info-box-title-yellow">⚠️ Apakah Live Streaming Bisa Tambah Jam Tayang?</h3>
+          <div class="info-box-content">
+            Yang dihitung jam tayang adalah video live yang sudah menjadi VOD (Video On Demand). Selesai live yang
+            durasi di bawah 18 jam, dan masih di publik, itu akan dihitung jam tayang.
+            <br><br>
+            <strong>Apakah bisa MONET?</strong> Ya... Selagi konten yang di-live sesuai kelayakan Partner YouTube, maka
+            bisa Monetize.
+          </div>
+        </div>
+        <!-- Box 2: Cara Kerja Netstream.my.id -->
+        <div class="info-box info-box-blue">
+          <h3 class="info-box-title info-box-title-blue">ℹ️ Cara Kerja Netstream.my.id</h3>
+          <div class="info-box-content">
+            LIVE STREAMING adalah Fitur Yang Memang Disediakan Oleh YouTube. Baik itu live horizontal maupun vertikal,
+            ada live cam dan live software.
+            Aplikasi live streaming ini kami buat berbasis website, cukup diakses melalui browser (Chrome, Mozilla, dll)
+            baik dari Android maupun PC/Laptop.
+          </div>
+        </div>
+        <!-- Box 3: Cara Atur Resolusi -->
+        <div class="info-box info-box-blue">
+          <h3 class="info-box-title info-box-title-blue">⚙️ Cara Atur Resolusi untuk Streaming Stabil</h3>
+          <div class="info-box-content">
+            📌 <strong>Catatan:</strong> Untuk Paket Murah (IP Shared), resolusi maksimal 1080p.
+
+            <ul>
+              <li>
+                📱 <strong>Untuk Handphone:</strong>
+                <ul>
+                  <li><strong>Kinemaster:</strong> Resolusi 720p, Bitrate 2500 Kbps, Frame Rate 30fps</li>
+                  <li><strong>VN Video Editor:</strong> Resolusi 720p, Bitrate 2500 Kbps, Frame Rate 30fps</li>
+                  <li><strong>Jika Butuh Kualitas Tinggi:</strong> Resolusi 1080p, Bitrate 6500 Kbps, Frame Rate 30fps
+                  </li>
+                  <li>⚠️ <strong>Jika Pakai Capcut Mobile:</strong> Pastikan di export ulang dengan aplikasi VN untuk
+                    kestabilan streaming</li>
+                </ul>
+              </li>
+              <li>
+                💻 <strong>Untuk PC/Laptop:</strong>
+                <ul>
+                  <li><strong>Capcut Windows:</strong> Resolusi 1080p, Bitrate 6500 Kbps, Frame Rate 30fps</li>
+                </ul>
+              </li>
+            </ul>
+            <br>
+            💡 <strong>Tips:</strong> Gunakan CBR (Constant Bitrate) untuk kestabilan streaming yang lebih baik.
+          </div>
+        </div>
+        <!-- Box 4: Bonus Tips Untuk Pemula -->
+        <div class="info-box info-box-blue">
+          <h3 class="info-box-title info-box-title-blue">💡 Bonus Tips Untuk Pemula</h3>
+          <div class="info-box-content">
+            🎯 <strong>Durasi Live Streaming:</strong>
+            <ul>
+              <li><strong>Pemula:</strong> Mulai dengan 1-2 jam untuk adaptasi</li>
+              <li><strong>Menengah:</strong> 3-4 jam setelah terbiasa</li>
+              <li><strong>Lanjutan:</strong> 5+ jam untuk yang sudah berpengalaman</li>
+            </ul>
+            <br>
+            ⏰ <strong>Waktu Ideal Start Live:</strong>
+            <ul>
+              <li><strong>Pagi:</strong> 07:00 - 09:00 WIB (Audience fresh &amp; aktif)</li>
+              <li><strong>Siang:</strong> 12:00 - 14:00 WIB (Break time audience)</li>
+              <li><strong>Sore:</strong> 17:00 - 19:00 WIB (Prime time, audience pulang kerja)</li>
+              <li><strong>Malam:</strong> 20:00 - 22:00 WIB (Waktu santai keluarga)</li>
+            </ul>
+            <br>
+            💎 <strong>Nilai Lebih Konten:</strong>
+            <ul>
+              <li><strong>Interaktif:</strong> Ajak audience berpartisipasi aktif</li>
+              <li><strong>Edukatif:</strong> Berikan tips, tutorial, atau pengetahuan baru</li>
+              <li><strong>Entertaining:</strong> Hiburan yang menghibur dan menarik</li>
+              <li><strong>Konsisten:</strong> Jadwal live yang teratur dan dapat diprediksi</li>
+            </ul>
+          </div>
+        </div>
+        <!-- Box 5: Informasi Proses Order -->
+        <div class="info-box info-box-yellow">
+          <h3 class="info-box-title info-box-title-yellow">🛈 Informasi Proses Order</h3>
+          <div class="info-box-content">
+            <strong>Waktu Proses:</strong> Order akan diproses maksimal 24 jam atau sesuai antrian setelah pembayaran
+            dikonfirmasi.
+            <br>
+            <strong>Chat Admin:</strong> Anda bisa chat langsung ke admin untuk konfirmasi dan informasi lebih lanjut.
+            <br>
+            <strong>Konfirmasi:</strong> Anda akan mendapat notifikasi via WhatsApp setelah order diproses.
+          </div>
+        </div>
+        <!-- Box 6: Cara Perpanjangan -->
+        <div class="info-box info-box-blue">
+          <h3 class="info-box-title info-box-title-blue">🔄 Cara Perpanjangan</h3>
+          <div class="info-box-content">
+            Jika Anda ingin <strong>Perpanjang Masa Aktif</strong>, silakan:
+            <ol>
+              <li>Bayar sesuai nominal paket via QRIS di halaman form order</li>
+              <li>Berikan informasi berikut ke Admin:
+                <ul>
+                  <li><strong>IP Login Anda</strong></li>
+                  <li><strong>Nama Username Anda</strong></li>
+                </ul>
+              </li>
+              <li>Kirim bukti pembayaran dan informasi tersebut ke Admin Kami</li>
+            </ol>
+            <br>
+            Terima kasih 🙏
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ===== PANDUAN SECTION ===== -->
+  <section class="section section-dark" id="panduan">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">Panduan Creator</div>
+        <h2 class="section-title">Cara Live <span class="gradient-text">Aman & Optimal</span></h2>
+        <p class="section-desc">Panduan lengkap agar channel YouTube kamu berkembang konsisten tanpa risiko strike atau
+          penalti.</p>
+      </div>
+      <!-- Cara Live Aman -->
+      <div class="guide-section">
+        <h3 class="guide-heading">🛡️ Cara Live Streaming yang Aman</h3>
+        <div class="guide-steps">
+          <div class="step-card" data-step="1">
+            <div class="step-num">1</div>
+            <div class="step-content">
+              <h4>Gunakan Konten Original</h4>
+              <p>Pastikan video yang di-stream adalah milik sendiri atau berlisensi bebas royalti. Konten berhak cipta
+                bisa menyebabkan strike dan pemutusan live secara tiba-tiba.</p>
+            </div>
+          </div>
+          <div class="step-card" data-step="2">
+            <div class="step-num">2</div>
+            <div class="step-content">
+              <h4>Aktifkan Fitur Live di Channel</h4>
+              <p>Channel YouTube wajib terverifikasi dan bebas pelanggaran dalam 90 hari terakhir. Minimal 1000
+                subscriber untuk akses live via mobile. Untuk desktop tidak ada batas subscriber.</p>
+            </div>
+          </div>
+          <div class="step-card" data-step="3">
+            <div class="step-num">3</div>
+            <div class="step-content">
+              <h4>Setup Stream Key yang Benar</h4>
+              <p>Salin stream key dari YouTube Studio → Live Dashboard. Masukkan ke aplikasi kami. Jangan pernah bagikan
+                stream key ke orang lain — ini akses penuh ke live kamu.</p>
+            </div>
+          </div>
+          <div class="step-card" data-step="4">
+            <div class="step-num">4</div>
+            <div class="step-content">
+              <h4>Atur Jadwal Live Konsisten</h4>
+              <p>Buat jadwal live yang rutin (misal setiap hari jam 8 pagi). Penonton yang tahu jadwalmu akan kembali
+                lagi. Algoritma YouTube juga menyukai konsistensi jadwal tayang.</p>
+            </div>
+          </div>
+          <div class="step-card" data-step="5">
+            <div class="step-num">5</div>
+            <div class="step-content">
+              <h4>Monitor dan Pantau Status</h4>
+              <p>Gunakan dashboard kami untuk pantau status live secara real-time. Jika ada error, sistem akan otomatis
+                restart. Kamu bisa cek log kapan saja melalui browser.</p>
+            </div>
+          </div>
+          <div class="step-card" data-step="6">
+            <div class="step-num">6</div>
+            <div class="step-content">
+              <h4>Patuhi Kebijakan YouTube</h4>
+              <p>Hindari konten dewasa, kekerasan, atau ujaran kebencian. Baca dan patuhi YouTube Community Guidelines.
+                Dengan stream yang bersih, channel kamu akan tumbuh aman jangka panjang.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Manfaat Live -->
+      <div class="guide-section">
+        <h3 class="guide-heading">📈 Manfaat Live Streaming untuk Channel YouTube</h3>
+        <div class="benefits-grid">
+          <div class="benefit-item">
+            <div class="benefit-icon">🔔</div>
+            <h4>Notifikasi ke Subscriber</h4>
+            <p>YouTube otomatis mengirim notifikasi ke semua subscriber saat kamu live. Ini cara paling ampuh untuk
+              menarik traffic organik.</p>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-icon">⏱️</div>
+            <h4>Watch Time Meledak</h4>
+            <p>Live stream menghasilkan watch time jauh lebih tinggi per sesi dibanding video biasa. Watch time adalah
+              faktor utama monetisasi YouTube.</p>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-icon">💬</div>
+            <h4>Interaksi Live Chat</h4>
+            <p>Komentar, super chat, dan interaksi langsung meningkatkan engagement rate channel. Sinyal positif bagi
+              algoritma YouTube.</p>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-icon">📊</div>
+            <h4>Rekaman Jadi Konten</h4>
+            <p>Rekaman live otomatis tersimpan sebagai video reguler di channel. Satu sesi live = satu konten video
+              tambahan gratis.</p>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-icon">💰</div>
+            <h4>Super Chat & Monetisasi</h4>
+            <p>Live stream memungkinkan super chat, super sticker, dan channel membership — sumber penghasilan ekstra
+              selain iklan.</p>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-icon">🏆</div>
+            <h4>Bangun Komunitas Loyal</h4>
+            <p>Penonton live adalah fans paling setia. Mereka yang hadir di live stream memiliki kemungkinan 5x lebih
+              tinggi untuk subscribe dan mendukung channelmu.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Tips Thumbnail -->
+      <div class="guide-section">
+        <h3 class="guide-heading">🖼️ Cara Memaksimalkan Auto Thumbnail</h3>
+        <div class="thumb-tips">
+          <div class="thumb-tip">
+            <span class="tip-num">💡</span>
+            <div>
+              <strong>Buat 3-5 variasi thumbnail</strong> — Upload berbagai versi thumbnail untuk video yang sama.
+              Sistem akan merotasi secara otomatis dan kamu bisa lihat mana yang performanya terbaik.
+            </div>
+          </div>
+          <div class="thumb-tip">
+            <span class="tip-num">📐</span>
+            <div>
+              <strong>Resolusi wajib 1280x720 piksel</strong> — YouTube menyarankan rasio 16:9. Pastikan teks terbaca
+              jelas di thumbnail kecil (mobile view).
+            </div>
+          </div>
+          <div class="thumb-tip">
+            <span class="tip-num">🎨</span>
+            <div>
+              <strong>Gunakan warna kontras & muka manusia</strong> — Thumbnail dengan wajah manusia dan warna mencolok
+              memiliki CTR rata-rata 38% lebih tinggi.
+            </div>
+          </div>
+          <div class="thumb-tip">
+            <span class="tip-num">⏰</span>
+            <div>
+              <strong>Jadwalkan rotasi setiap 3-7 hari</strong> — Rotasi terlalu cepat bisa membingungkan penonton.
+              Interval 3-7 hari memberikan waktu cukup untuk A/B testing yang valid.
+            </div>
+          </div>
+          <div class="thumb-tip">
+            <span class="tip-num">📈</span>
+            <div>
+              <strong>Monitor CTR di YouTube Analytics</strong> — Setelah rotasi, bandingkan CTR. Thumbnail dengan CTR
+              tertinggi jadikan default, lalu buat variasi baru untuk terus optimasi.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ===== DEMO SECTION ===== -->
+  <section class="section" id="demo">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">Demo Aplikasi</div>
+        <h2 class="section-title">Lihat Langsung <span class="gradient-text">Cara Kerjanya</span></h2>
+        <p class="section-desc">Tampilan nyata dari setiap aplikasi yang kami sediakan. Bersih, intuitif, dan mudah
+          digunakan bahkan oleh pemula.</p>
+      </div>
+      <!-- Demo Tabs -->
+      <div class="demo-tabs" role="tablist">
+        <button class="demo-tab active" id="demo-tab-live" onclick="showDemo('live')">📡 Live Stream</button>
+        <button class="demo-tab" id="demo-tab-thumb" onclick="showDemo('thumb')">🖼️ Auto Thumbnail</button>
+        <button class="demo-tab" id="demo-tab-upload" onclick="showDemo('upload')">📤 Auto Upload</button>
+        <button class="demo-tab" id="demo-tab-bot" onclick="showDemo('bot')">🤖 Live Bot</button>
+      </div>
+      <div class="demo-content" id="demo-live">
+        <div class="demo-layout">
+          <div class="demo-visual">
+            <div class="demo-video-wrapper" data-img="assets/hero_dashboard.png" data-text="Live Preview"
+              data-icon="&lt;span class='live-dot'&gt;&lt;/span&gt;" onclick="window.playDemoVideo('live', this)">
+              <div class="demo-img-wrap">
+                <img src="assets/hero_dashboard.png" alt="Demo Live Streaming Dashboard"
+                  onerror="this.style.display='none';this.parentElement.innerHTML+='<div class=img-placeholder><span class=live-dot></span><span style=font-size:1rem;color:var(--text-secondary)>Live Stream Dashboard</span></div>'" />
+                <div class="video-play-overlay">
+                  <div class="play-button-pulse">
+                    <span class="play-arrow">▶</span>
+                  </div>
+                  <span class="play-text">Klik untuk Nonton Demo</span>
+                </div>
+                <div class="demo-overlay">
+                  <span class="live-dot"></span> Live Preview
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="demo-info">
+            <h3>Dashboard Live Streaming</h3>
+            <p>Tampilan dashboard yang bersih dan informatif. Kamu bisa pantau status live, upload video baru, atur
+              stream key, dan monitor semua aktivitas dari satu halaman.</p>
+            <div class="demo-features">
+              <div class="demo-feat"><span>📊</span> Status live real-time</div>
+              <div class="demo-feat"><span>🎬</span> Upload & kelola video</div>
+              <div class="demo-feat"><span>🔑</span> Manajemen stream key</div>
+              <div class="demo-feat"><span>📋</span> Log aktivitas lengkap</div>
+            </div>
+            <div class="demo-steps">
+              <h4>Cara Mulai Live (3 Langkah):</h4>
+              <ol>
+                <li>Masuk ke dashboard menggunakan link yang kami berikan</li>
+                <li>Upload video → masukkan stream key YouTube → klik START</li>
+                <li>Pantau status langsung dari dashboard! Done ✅</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="demo-content hidden" id="demo-thumb">
+        <div class="demo-layout">
+          <div class="demo-visual">
+            <div class="demo-video-wrapper" data-img="assets/thumbnail_demo.png" data-text="Auto Rotating"
+              data-icon="🔄" onclick="window.playDemoVideo('thumb', this)">
+              <div class="demo-img-wrap">
+                <img src="assets/thumbnail_demo.png" alt="Demo Auto Thumbnail Rotator"
+                  onerror="this.style.display='none';this.parentElement.innerHTML+='<div class=img-placeholder>🔄<span style=font-size:1rem;color:var(--text-secondary)>Auto Thumbnail Rotator</span></div>'" />
+                <div class="video-play-overlay">
+                  <div class="play-button-pulse">
+                    <span class="play-arrow">▶</span>
+                  </div>
+                  <span class="play-text">Klik untuk Nonton Demo</span>
+                </div>
+                <div class="demo-overlay">
+                  <span>🔄</span> Auto Rotating
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="demo-info">
+            <h3>Auto Thumbnail Rotator</h3>
+            <p>Interface yang simpel namun powerful. Hubungkan akun YouTube, upload varian thumbnail, set jadwal rotasi
+              — dan biarkan bot bekerja otomatis meningkatkan CTR videomu.</p>
+            <div class="demo-features">
+              <div class="demo-feat"><span>🔗</span> Hubungkan akun YouTube</div>
+              <div class="demo-feat"><span>📁</span> Upload multi thumbnail</div>
+              <div class="demo-feat"><span>⏰</span> Set jadwal rotasi</div>
+              <div class="demo-feat"><span>📈</span> Lihat histori perubahan</div>
+            </div>
+            <div class="demo-steps">
+              <h4>Cara Pakai Auto Thumbnail:</h4>
+              <ol>
+                <li>Login dengan Google Account YouTube kamu</li>
+                <li>Pilih video → upload 3-5 variasi thumbnail</li>
+                <li>Set interval rotasi → Aktifkan → CTR naik sendiri!</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="demo-content hidden" id="demo-upload">
+        <div class="demo-layout">
+          <div class="demo-visual">
+            <div class="demo-video-wrapper" data-img="assets/auto_upload_demo.png" data-text="Uploading..."
+              data-icon="📤" onclick="window.playDemoVideo('upload', this)">
+              <div class="demo-img-wrap">
+                <img src="assets/auto_upload_demo.png" alt="Demo Auto Upload YouTube"
+                  onerror="this.style.display='none';this.parentElement.innerHTML+='<div class=img-placeholder>📤<span style=font-size:1rem;color:var(--text-secondary)>Auto Upload Dashboard</span></div>'" />
+                <div class="video-play-overlay">
+                  <div class="play-button-pulse">
+                    <span class="play-arrow">▶</span>
+                  </div>
+                  <span class="play-text">Klik untuk Nonton Demo</span>
+                </div>
+                <div class="demo-overlay">
+                  <span>📤</span> Uploading...
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="demo-info">
+            <h3>Auto Upload Video</h3>
+            <p>Jadwalkan ratusan video ke depan dengan mudah. Atur kapan video tayang, judul, deskripsi, tag, dan
+              privasi. Sistem kami akan upload otomatis tepat waktu.</p>
+            <div class="demo-features">
+              <div class="demo-feat"><span>📅</span> Jadwal upload custom</div>
+              <div class="demo-feat"><span>📝</span> Set metadata lengkap</div>
+              <div class="demo-feat"><span>🔒</span> Atur privasi video</div>
+              <div class="demo-feat"><span>✅</span> Notifikasi berhasil</div>
+            </div>
+            <div class="demo-steps">
+              <h4>Cara Auto Upload:</h4>
+              <ol>
+                <li>Login akun YouTube → Upload file video ke queue</li>
+                <li>Isi judul, deskripsi, tag, pilih waktu tayang</li>
+                <li>Klik Schedule → Video otomatis tayang sesuai jadwal!</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="demo-content hidden" id="demo-bot">
+        <div class="demo-layout">
+          <div class="demo-visual">
+            <div class="demo-video-wrapper" data-img="assets/auto_live_bot_demo.png" data-text="Bot Active"
+              data-icon="🤖" onclick="window.playDemoVideo('bot', this)">
+              <div class="demo-img-wrap">
+                <img src="assets/auto_live_bot_demo.png" alt="Demo Auto Live Bot"
+                  onerror="this.style.display='none';this.parentElement.innerHTML+='<div class=img-placeholder>🤖<span style=font-size:1rem;color:var(--text-secondary)>Auto Live Bot</span></div>'" />
+                <div class="video-play-overlay">
+                  <div class="play-button-pulse">
+                    <span class="play-arrow">▶</span>
+                  </div>
+                  <span class="play-text">Klik untuk Nonton Demo</span>
+                </div>
+                <div class="demo-overlay">
+                  <span>🤖</span> Bot Active
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="demo-info">
+            <h3>Auto Live Bot</h3>
+            <p>Set jadwal live sekali, bot akan mengelola segalanya — mulai video, mulai stream, monitor kualitas,
+              restart jika ada masalah, dan stop sesuai jadwal.</p>
+            <div class="demo-features">
+              <div class="demo-feat"><span>🗓️</span> Jadwal live otomatis</div>
+              <div class="demo-feat"><span>🎬</span> Playlist video queue</div>
+              <div class="demo-feat"><span>🔁</span> Auto restart jika error</div>
+              <div class="demo-feat"><span>📊</span> Monitor real-time</div>
+            </div>
+            <div class="demo-steps">
+              <h4>Cara Setup Live Bot:</h4>
+              <ol>
+                <li>Masukkan stream key YouTube → Upload video ke playlist</li>
+                <li>Set jadwal live (jam berapa, berapa lama)</li>
+                <li>Aktifkan bot → Live jalan sendiri setiap hari!</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ===== KATA MUTIARA SECTION ===== -->
+  <section class="section section-quotes">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">Inspirasi Creator</div>
+        <h2 class="section-title">Kata Mutiara untuk <span class="gradient-text">Creator Sejati</span></h2>
+      </div>
+      <div class="quotes-carousel" id="quotesCarousel">
+        <div class="quote-slide active">
+          <div class="quote-card">
+            <div class="quote-mark">"</div>
+            <p>Channel yang besar bukan dibangun dalam semalam. Tapi dari konsistensi yang terakumulasi setiap hari,
+              setiap live, setiap video.</p>
+            <span class="quote-author">— Prinsip Creator Sukses</span>
+          </div>
+        </div>
+        <div class="quote-slide">
+          <div class="quote-card">
+            <div class="quote-mark">"</div>
+            <p>Jangan tunggu sempurna untuk mulai. Mulai dulu, kemudian jadilah sempurna di sepanjang jalan. Penonton
+              menghargai keaslianmu.</p>
+            <span class="quote-author">— Filosofi Konten Digital</span>
+          </div>
+        </div>
+        <div class="quote-slide">
+          <div class="quote-card">
+            <div class="quote-mark">"</div>
+            <p>Satu live stream yang jujur dan tulus mengalahkan seratus video yang dibuat asal-asalan. Kualitas selalu
+              menang atas kuantitas.</p>
+            <span class="quote-author">— Wisdom Creator Indonesia</span>
+          </div>
+        </div>
+        <div class="quote-slide">
+          <div class="quote-card">
+            <div class="quote-mark">"</div>
+            <p>Algoritma bisa berubah, tren bisa berlalu — tapi komunitas yang kamu bangun dengan tulus akan tetap
+              bersamamu selamanya.</p>
+            <span class="quote-author">— Strategi Digital Jangka Panjang</span>
+          </div>
+        </div>
+        <div class="quote-slide">
+          <div class="quote-card">
+            <div class="quote-mark">"</div>
+            <p>Gunakan teknologi untuk memperkuat dirimu, bukan menggantikanmu. Otomatisasi adalah asisten terbaik yang
+              pernah ada untuk seorang creator.</p>
+            <span class="quote-author">— NetStream Philosophy</span>
+          </div>
+        </div>
+        <div class="quote-controls">
+          <button class="q-btn" id="q-prev" onclick="changeQuote(-1)" aria-label="Previous quote">‹</button>
+          <div class="q-dots" id="qDots"></div>
+          <button class="q-btn" id="q-next" onclick="changeQuote(1)" aria-label="Next quote">›</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ===== FAQ SECTION ===== -->
+  <section class="section section-dark" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">FAQ</div>
+        <h2 class="section-title">Pertanyaan yang <span class="gradient-text">Sering Ditanya</span></h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item" id="faq-1">
+          <button class="faq-question" onclick="toggleFaq(1)" aria-expanded="false">
+            Apakah aman menggunakan aplikasi ini? Apakah channel bisa kena strike?
+            <span class="faq-arrow">▼</span>
+          </button>
+          <div class="faq-answer">
+            <p>Ya, sangat aman jika digunakan dengan benar. Aplikasi kami menggunakan YouTube API resmi (Google OAuth)
+              untuk koneksi yang sah. Selama konten yang kamu stream adalah milik sendiri atau berlisensi bebas, channel
+              tidak akan kena strike. Kami juga menyediakan panduan lengkap cara live yang aman.</p>
+          </div>
+        </div>
+        <div class="faq-item" id="faq-2">
+          <button class="faq-question" onclick="toggleFaq(2)" aria-expanded="false">
+            Apakah perlu punya PC menyala untuk live streaming?
+            <span class="faq-arrow">▼</span>
+          </button>
+          <div class="faq-answer">
+            <p>Tidak perlu! Ini justru keunggulan utama kami. Live streaming berjalan di server cloud yang kami
+              sediakan. PC atau HP kamu bisa dimatikan, internet bisa terputus — stream tetap berjalan 24 jam penuh
+              tanpa gangguan.</p>
+          </div>
+        </div>
+        <div class="faq-item" id="faq-3">
+          <button class="faq-question" onclick="toggleFaq(3)" aria-expanded="false">
+            Berapa minimal subscriber untuk bisa live streaming?
+            <span class="faq-arrow">▼</span>
+          </button>
+          <div class="faq-answer">
+            <p>Untuk live via browser/desktop: tidak ada batas subscriber. Untuk live via mobile: minimal 50 subscriber
+              (kebijakan terbaru YouTube 2024). Channel harus terverifikasi dan tidak memiliki pelanggaran live stream
+              dalam 90 hari terakhir.</p>
+          </div>
+        </div>
+        <div class="faq-item" id="faq-4">
+          <button class="faq-question" onclick="toggleFaq(4)" aria-expanded="false">
+            Bagaimana cara mulai berlangganan?
+            <span class="faq-arrow">▼</span>
+          </button>
+          <div class="faq-answer">
+            <p>Sangat mudah! Hubungi kami via WhatsApp atau Telegram, pilih paket yang sesuai, lakukan pembayaran, dan
+              kami akan langsung setup akun dan dashboard untuk kamu. Proses setup biasanya selesai dalam 1-24 jam
+              kerja.</p>
+          </div>
+        </div>
+        <div class="faq-item" id="faq-5">
+          <button class="faq-question" onclick="toggleFaq(5)" aria-expanded="false">
+            Apakah bisa menggunakan beberapa layanan sekaligus?
+            <span class="faq-arrow">▼</span>
+          </button>
+          <div class="faq-answer">
+            <p>Tentu saja! Bahkan kami sangat menganjurkan kombinasi layanan untuk hasil maksimal. Misalnya: Live Stream
+              + Auto Thumbnail + Auto Upload = channel yang aktif, thumbnail optimal, dan konten konsisten. Tanya kami
+              untuk harga bundle hemat!</p>
+          </div>
+        </div>
+        <div class="faq-item" id="faq-6">
+          <button class="faq-question" onclick="toggleFaq(6)" aria-expanded="false">
+            Bagaimana jika ada masalah teknis atau gangguan?
+            <span class="faq-arrow">▼</span>
+          </button>
+          <div class="faq-answer">
+            <p>Kami menyediakan support teknis via WhatsApp & Telegram setiap hari. Untuk paket Pro, support tersedia
+              24/7 dengan respons prioritas. Sistem kami juga memiliki auto-restart yang menangani gangguan minor secara
+              otomatis.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ===== MODAL PEMESANAN & PEMBAYARAN ===== -->
+  <div id="modal-pemesanan"
+    style="display:none; position:fixed; inset:0; z-index:9999; align-items:center; justify-content:center; padding: 16px;">
+    <!-- Backdrop -->
+    <div onclick="closeOrderModal()"
+      style="position:absolute; inset:0; background:rgba(0,0,0,0.75); backdrop-filter:blur(6px); cursor:pointer;"></div>
+
+    <!-- Modal Box -->
+    <div id="modal-pemesanan-box"
+      style="position:relative; z-index:10000; width:100%; max-width:920px; max-height:92vh; overflow-y:auto; background:linear-gradient(145deg, #0d1120 0%, #111827 100%); border:1px solid rgba(255,255,255,0.1); border-radius:24px; box-shadow:0 25px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(250,204,21,0.15); animation:modalSlideIn 0.35s cubic-bezier(0.34,1.56,0.64,1); padding:40px;">
+
+      <!-- Header Modal -->
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:28px;">
+        <div>
+          <div
+            style="display:inline-flex; align-items:center; gap:8px; background:rgba(250,204,21,0.15); border:1px solid rgba(250,204,21,0.3); border-radius:20px; padding:6px 16px; font-size:0.78rem; font-weight:700; color:#facc15; letter-spacing:0.05em; margin-bottom:10px;">
+            🛒 FORM ORDER INSTAN</div>
+          <h2
+            style="font-family:'Space Grotesk',sans-serif; font-size:clamp(1.3rem,3vw,1.8rem); font-weight:800; color:#fff; margin:0;">
+            Formulir Pemesanan <span style="color:#facc15;">& Kasir</span> Pembayaran</h2>
+          <p style="font-size:0.85rem; color:#64748b; margin-top:6px;">Isi data, pilih metode bayar, konfirmasi —
+            selesai! 🚀</p>
+        </div>
+        <!-- Tombol Tutup -->
+        <button onclick="closeOrderModal()" aria-label="Tutup"
+          style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); color:#94a3b8; width:40px; height:40px; border-radius:50%; font-size:1.2rem; cursor:pointer; flex-shrink:0; display:flex; align-items:center; justify-content:center; transition:all 0.2s;"
+          onmouseover="this.style.background='rgba(255,255,255,0.14)'"
+          onmouseout="this.style.background='rgba(255,255,255,0.06)'">✕</button>
+      </div>
+
+      <form id="order-form-checkout" onsubmit="return false;"
+        style="display:grid; grid-template-columns:1fr; gap:24px; align-items:start;">
+
+        <!-- Kolom Kiri: Input Data Diri -->
+        <div
+          style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:16px; padding:28px;">
+          <h3
+            style="font-family:'Space Grotesk',sans-serif; font-size:1.1rem; font-weight:700; color:#facc15; margin-bottom:20px; display:flex; align-items:center; gap:8px;">
+            <span>📝</span> Data Lengkap Pemesan
+          </h3>
+
+          <div style="display:flex; flex-direction:column; gap:18px;">
+            <!-- Nama -->
+            <div style="display:flex; flex-direction:column; gap:8px; text-align:left;">
+              <label for="checkout-nama" style="font-size:0.88rem; font-weight:600; color:#94a3b8;">Nama Lengkap
+                Pelanggan *</label>
+              <input type="text" id="checkout-nama" placeholder="Masukkan nama lengkap Anda" required
+                style="width:100%; padding:14px 18px; border-radius:10px; background:rgba(10,10,15,0.8); border:1px solid rgba(255,255,255,0.15); color:#fff; font-size:0.92rem; outline:none; transition:border-color 0.2s; box-sizing:border-box;"
+                onfocus="this.style.borderColor='#facc15'" onblur="this.style.borderColor='rgba(255,255,255,0.15)'" />
+            </div>
+            <!-- WhatsApp -->
+            <div style="display:flex; flex-direction:column; gap:8px; text-align:left;">
+              <label for="checkout-wa" style="font-size:0.88rem; font-weight:600; color:#94a3b8;">Nomor WhatsApp Aktif
+                *</label>
+              <input type="text" id="checkout-wa" placeholder="Contoh: 085157883603 atau 6285157883603" required
+                style="width:100%; padding:14px 18px; border-radius:10px; background:rgba(10,10,15,0.8); border:1px solid rgba(255,255,255,0.15); color:#fff; font-size:0.92rem; outline:none; transition:border-color 0.2s; box-sizing:border-box;"
+                onfocus="this.style.borderColor='#facc15'" onblur="this.style.borderColor='rgba(255,255,255,0.15)'" />
+              <span style="font-size:0.72rem; color:#94a3b8;">⚠️ WAJIB diawali angka 08 atau 62 untuk tujuan notifikasi
+                WhatsApp.</span>
+            </div>
+            <!-- Dropdown Paket -->
+            <div style="display:flex; flex-direction:column; gap:8px; text-align:left;">
+              <label for="checkout-paket" style="font-size:0.88rem; font-weight:600; color:#94a3b8;">Pilih Paket Sewa
+                *</label>
+              <select id="checkout-paket" onchange="updateCheckoutPayment()" required
+                style="width:100%; padding:14px 18px; border-radius:10px; background:rgba(10,10,15,0.8); border:1px solid rgba(255,255,255,0.15); color:#fff; font-size:0.92rem; outline:none; transition:border-color 0.2s; cursor:pointer;"
+                onfocus="this.style.borderColor='#facc15'" onblur="this.style.borderColor='rgba(255,255,255,0.15)'">
+                <option value="" disabled selected>-- Silakan Pilih Paket --</option>
+                <optgroup label="📡 LIVE STREAMING">
+                  <option value="Live Ekonomis - 3 Live/bln (30rb)" data-harga="30000">Live Ekonomis - 3 Live/bln (Rp
+                    30.000)</option>
+                  <option value="Live Ekonomis - 5 Live/bln (45rb)" data-harga="45000">Live Ekonomis - 5 Live/bln (Rp
+                    45.000)</option>
+                  <option value="Live Ekonomis - 10 Live/bln (95rb)" data-harga="95000">Live Ekonomis - 10 Live/bln (Rp
+                    95.000)</option>
+                  <option value="Live Dedicated Pro A (250rb)" data-harga="250000">Live Dedicated Pro A (Rp 250.000)
+                  </option>
+                  <option value="Live Dedicated Pro Plus B (350rb)" data-harga="350000">Live Dedicated Pro Plus B (Rp
+                    350.000)</option>
+                </optgroup>
+                <optgroup label="🖼️ AUTO THUMBNAIL ROTATOR">
+                  <option value="Auto Thumbnail Single Creator (70rb)" data-harga="70000">Auto Thumbnail - Single
+                    Creator (Rp 70.000)</option>
+                  <option value="Auto Thumbnail Multi Creator (100rb)" data-harga="100000">Auto Thumbnail - Multi
+                    Creator (Rp 100.000)</option>
+                </optgroup>
+                <optgroup label="📤 AUTO UPLOAD">
+                  <option value="Auto Upload Video (100rb)" data-harga="100000">Auto Upload Video - Unlimited (Rp
+                    100.000)</option>
+                </optgroup>
+                <optgroup label="🤖 AUTO LIVE BOT">
+                  <option value="Auto Live Bot (250rb)" data-harga="250000">Auto Live Bot - 24/7 (Rp 250.000)</option>
+                </optgroup>
+              </select>
+            </div>
+            <!-- Dropdown Metode Pembayaran (Tersembunyi sampai pesanan didaftarkan) -->
+            <div id="checkout-metode-container" style="display:none; flex-direction:column; gap:8px; text-align:left;">
+              <label for="checkout-metode" style="font-size:0.88rem; font-weight:600; color:#94a3b8;">Pilih Metode
+                Pembayaran *</label>
+              <select id="checkout-metode" onchange="updateCheckoutPayment()"
+                style="width:100%; padding:14px 18px; border-radius:10px; background:rgba(10,10,15,0.8); border:1px solid rgba(255,255,255,0.15); color:#fff; font-size:0.92rem; outline:none; transition:border-color 0.2s; cursor:pointer;"
+                onfocus="this.style.borderColor='#facc15'" onblur="this.style.borderColor='rgba(255,255,255,0.15)'">
+                <option value="qris" selected>📱 QRIS (Scan Barcode — Gopay, OVO, Dana, dll)</option>
+                <option value="transfer">🏦 Transfer Bank (BCA / BRI / Mandiri / SeaBank / Jago)</option>
+              </select>
+            </div>
+
+            <!-- Tombol Pesan Sekarang (Langkah 1) -->
+            <div id="btn-pesan-container" style="padding-top:4px;">
+              <button type="button" id="btn-pesan-sekarang" onclick="handlePesanSekarang()"
+                style="width:100%; padding:16px 24px; border-radius:12px; background:linear-gradient(135deg,#10B981,#06B6D4); color:#fff; font-weight:800; font-size:1rem; border:none; cursor:pointer; transition:all 0.25s; box-shadow:0 4px 20px rgba(16,185,129,0.4); display:flex; align-items:center; justify-content:center; gap:10px; letter-spacing:0.02em;"
+                onmouseover="this.style.transform='scale(1.02)';this.style.boxShadow='0 6px 28px rgba(16,185,129,0.6)'"
+                onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 4px 20px rgba(16,185,129,0.4)'">
+                <span style="font-size:1.2rem;">🛒</span> Pesan Sekarang
+              </button>
+              <p style="font-size:0.75rem; color:#64748b; text-align:center; margin-top:10px; line-height:1.5;">
+                📡 Data pesanan akan didaftarkan ke sistem kami secara otomatis.<br>Setelah itu pilihan pembayaran akan muncul.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Kolom Kanan: Kasir Pembayaran & Upload Bukti (Tersembunyi sampai pesanan didaftarkan) -->
+        <div id="checkout-right-column"
+          style="display:none; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:16px; padding:28px; flex-direction:column; gap:18px;">
+          <h3
+            style="font-family:'Space Grotesk',sans-serif; font-size:1.1rem; font-weight:700; color:#facc15; display:flex; align-items:center; gap:8px; margin-bottom:0;">
+            <span>💰</span> Rincian Kasir Pembayaran
+          </h3>
+
+          <!-- Box Pembayaran Dinamis: isi rekening/QRIS dirender oleh updateCheckoutPayment() -->
+          <div id="checkout-payment-box"
+            style="background:rgba(0,0,0,0.25); border:1px solid rgba(255,255,255,0.06); border-radius:14px; padding:20px; text-align:center;">
+            <div style="font-size:0.88rem; color:#94a3b8;">Silakan pilih paket sewa terlebih dahulu untuk melihat
+              informasi transfer pembayaran.</div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- Modal animation style -->
+  <style>
+    @keyframes modalSlideIn {
+      from {
+        opacity: 0;
+        transform: scale(0.92) translateY(24px);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+      }
+    }
+
+    #modal-pemesanan-box {
+      scrollbar-width: thin;
+      scrollbar-color: #facc15 rgba(0, 0, 0, 0.2);
+    }
+
+    /* Disabled input styling agar tetap terbaca */
+    #order-form-checkout input:disabled,
+    #order-form-checkout select:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      border-color: rgba(250,204,21,0.25) !important;
+      background: rgba(250,204,21,0.04) !important;
+      color: #cbd5e1 !important;
+    }
+
+    /* Slide-in animation for right column reveal */
+    @keyframes revealColumn {
+      from { opacity: 0; transform: translateX(18px); }
+      to   { opacity: 1; transform: translateX(0);    }
+    }
+    #checkout-right-column.visible {
+      animation: revealColumn 0.4s cubic-bezier(0.34,1.56,0.64,1) both;
+    }
+
+    @media (max-width:700px) {
+      #order-form-checkout {
+        grid-template-columns: 1fr !important;
+      }
+
+      #modal-pemesanan-box {
+        padding: 24px 16px !important;
+      }
+    }
+  </style>
+  <!-- ===== CTA SECTION ===== -->
+  <section class="section cta-section" id="kontak">
+    <div class="cta-glow-1"></div>
+    <div class="cta-glow-2"></div>
+    <div class="container">
+      <div class="cta-content">
+        <div class="cta-badge">🚀 Daftar Sekarang</div>
+        <h2 class="cta-title">Siap Membawa Channel-mu ke <span class="gradient-text">Level Berikutnya?</span></h2>
+        <p class="cta-desc">Bergabunglah dengan 500+ creator yang sudah mempercayakan pertumbuhan channel mereka kepada
+          NetStream. Setup cepat, harga terjangkau, hasil nyata.</p>
+
+        <div class="contact-options">
+          <a href="https://wa.me/6285157883603?text=Halo%20NetStream%2C%20saya%20ingin%20info%20paket%20sewa%20aplikasi"
+            class="contact-btn whatsapp-btn" id="btn-wa" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+            </svg>
+            WhatsApp Kami
+          </a>
+          <a href="https://t.me/netstream_id" class="contact-btn telegram-btn" id="btn-tg" target="_blank"
+            rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+              <path
+                d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
+            </svg>
+            Telegram Kami
+          </a>
+        </div>
+        <div class="cta-features">
+          <span>✅ Setup cepat 24 jam</span>
+          <span>✅ Garansi uang kembali 3 hari</span>
+          <span>✅ Tanpa kontrak panjang</span>
+          <span>✅ Support full bahasa Indonesia</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <span class="logo-icon">📡</span>
+            <span class="logo-text">Net<span class="logo-accent">Stream</span></span>
+          </div>
+          <p>Platform creator tools terlengkap untuk YouTube creator Indonesia. Kami membantu kamu berkembang lebih
+            cepat dengan teknologi otomatisasi terdepan.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="YouTube" id="footer-yt">📺</a>
+            <a href="#" aria-label="Instagram" id="footer-ig">📸</a>
+            <a href="#" aria-label="TikTok" id="footer-tt">🎵</a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>Layanan</h4>
+          <ul>
+            <li><a href="#service-live">Live Streaming</a></li>
+            <li><a href="#service-thumbnail">Auto Thumbnail</a></li>
+            <li><a href="#service-upload">Auto Upload</a></li>
+            <li><a href="#service-bot">Auto Live Bot</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Panduan</h4>
+          <ul>
+            <li><a href="#panduan">Cara Live Aman</a></li>
+            <li><a href="#panduan">Tips Thumbnail</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#demo">Demo Aplikasi</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Harga</h4>
+          <ul>
+            <li><a href="#harga">Paket Ekonomis</a></li>
+            <li><a href="#harga">Paket Pro</a></li>
+            <li><a href="#harga">Auto Thumbnail</a></li>
+            <li><a href="#harga">Bundle Hemat</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 NetStream - Platform Live Streaming &amp; Creator Tools Terbaik</p>
+        <p>Hubungi kami: <a href="https://wa.me/6285157883603" target="_blank"
+            style="color: var(--accent); text-decoration: underline;">+62 851-5788-3603</a></p>
+      </div>
+    </div>
+  </footer>
+  <!-- Back to Top -->
+  <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})"
+    aria-label="Back to top">↑</button>
+  <script src="script.js"></script>
+</body>
+
+</html>
