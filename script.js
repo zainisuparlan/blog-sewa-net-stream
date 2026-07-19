@@ -529,7 +529,7 @@ window.updateCheckoutPayment = function () {
     instructionsHtml = `
       <div style="margin-bottom: 12px; font-weight: 700; color: #fff;">Pindai QRIS di Bawah Ini:</div>
       <div style="background: #white; padding: 10px; display: inline-block; border-radius: 8px; margin-bottom: 12px;">
-        <img src="assets/qris.png" alt="Scan QRIS NetStream" style="max-width: 180px; display: block;" onerror="this.style.display='none';this.parentElement.innerHTML='<div style=\&quot;width:180px;height:180px;display:flex;align-items:center;justify-content:center;background:#1e293b;border-radius:8px;font-size:0.75rem;color:#64748b;\&quot;>[Gambar assets/qris.png Belum Diunggah]</div>'" />
+        <img src="/assets/qris.png" alt="Scan QRIS NetStream" style="max-width: 180px; display: block;" onerror="this.style.display='none';this.parentElement.innerHTML='<div style=\&quot;width:180px;height:180px;display:flex;align-items:center;justify-content:center;background:#1e293b;border-radius:8px;font-size:0.75rem;color:#64748b;\&quot;>QRIS tidak dapat dimuat</div>'" />
       </div>
       <div style="font-size: 0.82rem; color: #94a3b8; line-height: 1.5; text-align: left; margin-bottom: 16px;">
         1. Scan QRIS dengan aplikasi pembayaran/E-Wallet Anda (Gopay, OVO, Dana, LinkAja, ShopeePay, Mobile Banking).<br>
