@@ -529,7 +529,7 @@ window.updateCheckoutPayment = function () {
     instructionsHtml = `
       <div style="margin-bottom: 12px; font-weight: 700; color: #fff;">Pindai QRIS di Bawah Ini:</div>
       <div style="background: white; padding: 12px; display: inline-block; border-radius: 12px; margin-bottom: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.3);">
-        <img src="assets/qris.png" alt="Scan QRIS Netstream Cloud" style="max-width: 300px; width: 100%; display: block; border-radius: 12px; margin: 0 auto; box-shadow: 0 4px 12px rgba(0,0,0,0.15);" />QRIS tidak dapat dimuat</div>'" />
+        <img src="assets/qris.png" alt="Scan QRIS Netstream Cloud" style="max-width: 300px; width: 100%; display: block; border-radius: 12px; margin: 0 auto; box-shadow: 0 4px 12px rgba(0,0,0,0.15);" />
       </div>
       <div style="font-size: 0.82rem; color: #94a3b8; line-height: 1.5; text-align: left; margin-bottom: 16px;">
         1. Scan QRIS dengan aplikasi pembayaran/E-Wallet Anda (Gopay, OVO, Dana, LinkAja, ShopeePay, Mobile Banking).<br>
@@ -653,7 +653,7 @@ window.handlePesanSekarang = async function () {
   const timeoutId  = setTimeout(() => controller.abort(), 5000);
 
   try {
-    const response = await fetch('http://103.93.129.57:9999/api/v1/client-order', {
+    const response = await fetch('/api/satpam', {
       method:  'POST',
       headers: { 'Content-Type': 'application/json' },
       body:    JSON.stringify(payload),
