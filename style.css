@@ -2072,6 +2072,14 @@ ul {
   margin-bottom: 40px;
 }
 
+/* Thumbnail Info Grid: Ketentuan + Tips (2 col desktop, 1 col mobile) */
+.thumb-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-top: 8px;
+}
+
 .promo-card {
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
@@ -2584,6 +2592,11 @@ ul {
 
   .promo-grid {
     grid-template-columns: 1fr !important;
+  }
+
+  .thumb-info-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px;
   }
 }
 
